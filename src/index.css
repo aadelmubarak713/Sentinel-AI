@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-ink-950 text-slate-200 antialiased;
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #2c3a52 transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #2c3a52;
+    border-radius: 4px;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #3c4a64;
+  }
+}
+
+@layer components {
+  .soc-card {
+    @apply bg-ink-850/80 border border-ink-700 rounded-xl shadow-soc-card backdrop-blur-sm;
+  }
+  .soc-card-hover {
+    @apply soc-card transition-colors duration-200 hover:border-ink-600;
+  }
+  .soc-input {
+    @apply bg-ink-800 border border-ink-700 rounded-lg px-3 py-2 text-sm text-slate-200
+      placeholder:text-slate-500 focus:outline-none focus:border-cyan-500/60 focus:ring-1 focus:ring-cyan-500/30 transition-colors;
+  }
+  .soc-btn {
+    @apply inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg text-sm font-medium
+      transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .soc-btn-primary {
+    @apply soc-btn bg-cyan-500/90 text-ink-950 hover:bg-cyan-400;
+  }
+  .soc-btn-ghost {
+    @apply soc-btn bg-ink-800 text-slate-300 border border-ink-700 hover:bg-ink-750 hover:text-slate-100;
+  }
+  .soc-btn-danger {
+    @apply soc-btn bg-critical/15 text-critical border border-critical/30 hover:bg-critical/25;
+  }
+  .severity-dot {
+    @apply inline-block w-2 h-2 rounded-full;
+  }
+}
